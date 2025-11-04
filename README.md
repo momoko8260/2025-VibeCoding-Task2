@@ -88,34 +88,7 @@ npm run check:all
 
 ## GitHub Actions 自動化檢查
 
-當你把程式碼推送到 GitHub 後,會自動觸發檢查:
-
-### 1. PR 檢查 ([pr-check.yml](.github/workflows/pr-check.yml))
-
-**何時觸發**: 當你建立或更新 Pull Request 時
-
-**做什麼**:
-
-- 自動執行網站檢查
-- 在 PR 下方自動留言,顯示檢查結果 (包含分數和每項檢查的通過/失敗狀態)
-- **所有檢查項目必須通過，否則 CI 會失敗並阻擋 PR 合併**
-
-**範例留言**:
-
-```markdown
-## 🎯 網站檢查結果
-
-### 總分:82/100
-
-| 規則 | 結果 |
-|------|------|
-| 基本結構 `<html><head><body>` | ✅ 通過 |
-| `<html lang>` | ✅ 通過 |
-| `<title>` 非空 | ❌ 失敗 |
-...
-```
-
-### 2. 分支檢查 ([website-check.yml](.github/workflows/website-check.yml))
+當你把程式碼推送到 GitHub 的 `main` 或 `develop` 分支後,會自動觸發檢查 ([website-check.yml](.github/workflows/website-check.yml)):
 
 **何時觸發**: 當你推送程式碼到 `main` 或 `develop` 分支時
 
@@ -172,12 +145,7 @@ npm run check:all
 **Q: 本機檢查通過,但 GitHub Actions 失敗?**
 
 - 確認 GitHub Actions 有正確安裝 Playwright (`npx playwright install --with-deps chromium`)
-- 檢查 PR 環境變數和權限設定
-
-**Q: PR 沒有自動留言?**
-
-- 確認 workflow 有設定正確的權限 (`pull-requests: write`)
-- 檢查 `GITHUB_TOKEN` 是否有效
+- 檢查環境變數和權限設定
 
 ## 授權
 
