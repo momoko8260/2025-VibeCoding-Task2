@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name · Frontend Dev — 個人品牌網站</title>
-  <meta name="description" content="介紹前端工程師背景、展示技能與作品集，並提供聯絡方式。此網站為骨架階段，所有區塊皆為占位內容，方便未來以 Section SDD 替換整段內容。" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Name · Frontend Dev — 個人品牌網站</title>
+<meta name="description" content="介紹整理師的師背景、展示技能與作品集，並提供聯絡方式。此網站為骨架階段，所有區塊皆為占位內容，方便未來以 Section SDD 替換整段內容。" />
   <style>
     /* CSS:BASE-START */
     /* 全站基底樣式（不可使用 ID 選擇器） */
@@ -145,32 +145,36 @@
     /* CSS:HERO-END */
 
     /* CSS:ABOUT-START */
-    .section {
-      padding:1.25rem 0;
-    }
-    .section-title {
-      margin:0 0 0.5rem 0;
-      font-size:1.15rem;
-      color:var(--text);
-    }
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.03);
-      padding:1rem;
-      border-radius:12px;
-      box-shadow: 0 8px 24px rgba(2,8,23,0.5);
-    }
-    .about-grid {
+    .section-about .about-grid {
       display:block;
       gap:1rem;
     }
-    .about-avatar {
-      width:100%;
-      max-width:320px;
-      margin-bottom:1rem;
+    .section-about h2.section-title {
+      margin:0 0 0.75rem 0;
+      font-size:1.3rem;
+      color:var(--text);
     }
-    .muted {
-      color:var(--muted);
+    .section-about p {
+      margin-bottom:0.75rem;
+      line-height:1.6;
+    }
+    .about-list {
+      margin:0.75rem 0;
+      padding-left:1.25rem;
+    }
+    .about-list li {
+      margin-bottom:0.5rem;
+    }
+    .about-buttons {
+      display:flex;
+      gap:0.5rem;
+      flex-wrap:wrap;
+      margin-top:1rem;
+    }
+    .section-about .about-avatar {
+      width:100%;
+      max-width:360px;
+      margin-top:1rem;
     }
     /* CSS:ABOUT-END */
 
@@ -265,148 +269,94 @@
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="site-header">
-      <div class="container nav">
-        <div class="brand">Your Name · Frontend Dev</div>
-        <nav aria-label="主要導覽">
-          <ul class="nav-list" role="list" style="list-style:none;margin:0;padding:0;">
-            <li><a class="nav-link" href="#hero">首頁</a></li>
-            <li><a class="nav-link" href="#about">關於我</a></li>
-            <li><a class="nav-link" href="#skills">技能</a></li>
-            <li><a class="nav-link" href="#projects">作品集</a></li>
-            <li><a class="nav-link" href="#contact">聯絡我</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<div class="page">
 
-    <main>
-      <!-- SECTION:HERO-START -->
-      <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
-        <div class="container hero">
-          <div class="hero-inner hero-row">
-            <h1 id="hero-heading" class="hero-title">個人品牌網站 — 前端工程師的作品與履歷展示</h1>
-            <p class="hero-sub">
-              這個網站骨架為 Phase 1（環境與骨架）：放置簡短自我介紹、角色與行動呼籲的占位內容，並預留插槽給開發者替換。
-            </p>
-
-            <div class="hero-cta">
-              <a class="btn" href="#projects">瀏覽作品集</a>
-              <a class="btn" href="mailto:hello@example.com">寄信給我</a>
-              <a class="btn" href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
-            </div>
-
-            <p class="hero-credit muted" style="margin-top:0.75rem;">
-              提示給開發者：之後會用 Section SDD 的 Prompt 產生正式文案與版面，再把整個 section 整段貼回來取代這一區。
-            </p>
-          </div>
-
-          <div class="hero-image" aria-hidden="false">
-            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=800&q=80" 
-     alt="在筆電前撰寫程式碼的開發者工作桌面" loading="lazy" />
-                 <p class="muted" style="font-size:0.8rem;margin:0.5rem 0 0 0;">示意照：Unsplash 圖片，展示工作場景。</p>
-          </div>
-        </div>
-      </section>
-      <!-- SECTION:HERO-END -->
-
-      <!-- SECTION:ABOUT-START -->
-      <section id="about" class="section section-about" aria-labelledby="about-heading">
-        <div class="container">
-          <div class="panel about-grid">
-            <div>
-              <h2 id="about-heading" class="section-title">關於我</h2>
-              <p class="muted">
-                這裡目前是 About 區的占位內容，之後會用另一個 Prompt 產生正式內容，請把新的 section 程式碼整段貼回來，取代這一區。
-              </p>
-              <p class="muted">
-                開發者提示：把新的 About 區整段貼在 <!-- SECTION:ABOUT-START --> 與 <!-- SECTION:ABOUT-END --> 這兩個註解之間，完全取代現在這一區。
-              </p>
-            </div>
-            <div>
-              <img class="about-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80&auto=format&fit=crop" alt="坐在辦公桌前思考的工程師形象照" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- SECTION:ABOUT-END -->
-
-      <!-- SECTION:SKILLS-START -->
-      <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
-        <div class="container">
-          <h2 id="skills-heading" class="section-title">技能</h2>
-          <p class="muted">這裡目前是 Skills 區的占位內容，之後會用 Section SDD 產生更完整的內容，請把新的 section 程式碼整段貼回來，取代這一區。</p>
-
-          <div class="panel">
-            <div class="skill-list" role="list">
-              <span class="skill-chip">HTML / CSS</span>
-              <span class="skill-chip">RWD</span>
-              <span class="skill-chip">Accessibility</span>
-              <span class="skill-chip">Design Systems</span>
-              <span class="skill-chip">UI Prototyping</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- SECTION:SKILLS-END -->
-
-      <!-- SECTION:PROJECTS-START -->
-      <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
-        <div class="container">
-          <h2 id="projects-heading" class="section-title">作品集</h2>
-          <p class="muted">這裡目前是 Projects 區的占位內容，之後會用 Section SDD 產生更完整的內容，請把新的 section 程式碼整段貼回來，取代這一區。</p>
-
-          <div class="projects-grid">
-            <article class="project-card" aria-labelledby="proj-1">
-              <h3 id="proj-1" class="project-title">專案範例一 — 簡易作品卡</h3>
-              <p class="project-desc muted">占位說明：專案摘要與關鍵技術，將於第二階段替換為真實專案內容與連結。</p>
-            </article>
-
-            <article class="project-card" aria-labelledby="proj-2">
-              <h3 id="proj-2" class="project-title">專案範例二 — 互動式頁面（占位）</h3>
-              <p class="project-desc muted">占位說明：此處會包含專案圖片、描述與連結，請用 Section SDD 貼回整段內容。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!-- SECTION:PROJECTS-END -->
-
-      <!-- SECTION:CONTACT-START -->
-      <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
-        <div class="container">
-          <h2 id="contact-heading" class="section-title">聯絡我</h2>
-          <p class="muted">這裡目前是 Contact 區的占位內容，之後會用 Section SDD 產生更完整的內容，請把新的 section 程式碼整段貼回來，取代這一區。</p>
-
-          <div class="panel contact-list">
-            <div class="contact-item">
-              <span class="muted">Email</span>
-              <a href="mailto:hello@example.com">hello@example.com</a>
-            </div>
-            <div class="contact-item">
-              <span class="muted">電話</span>
-              <a href="tel:+886900000000">+886 900 000 000</a>
-            </div>
-            <div class="contact-item">
-              <span class="muted">GitHub</span>
-              <a href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a>
-            </div>
-            <div class="contact-item">
-              <span class="muted">LinkedIn</span>
-              <a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener">linkedin.com/in/yourname</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- SECTION:CONTACT-END -->
-    </main>
-
-    <footer style="margin-top:auto;padding:1.25rem 0;">
-      <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
-        <div class="muted">© <span aria-hidden="true">2025</span> Your Name · Frontend Dev</div>
-        <div class="muted">此為網站骨架（Phase 1），所有內容為占位文字。</div>
-      </div>
-    </footer>
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">Your Name · Frontend Dev</div>
+    <nav aria-label="主要導覽">
+      <ul class="nav-list" role="list" style="list-style:none;margin:0;padding:0;">
+        <li><a class="nav-link" href="#hero">首頁</a></li>
+        <li><a class="nav-link" href="#about">關於我</a></li>
+        <li><a class="nav-link" href="#skills">技能</a></li>
+        <li><a class="nav-link" href="#projects">作品集</a></li>
+        <li><a class="nav-link" href="#contact">聯絡我</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
+
+<main>
+
+<!-- SECTION:HERO-START -->
+（此區保持不變）
+<!-- SECTION:HERO-END -->
+
+<!-- SECTION:ABOUT-START -->
+<section id="about" class="section section-about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="panel about-grid">
+
+      <!-- Left: Text -->
+      <div>
+        <h2 id="about-heading" class="section-title">關於我</h2>
+
+        <p class="muted">
+          我是一位專業的空間整理師，目前主要協助客戶恢復家中或工作場域的舒適度，擅長以系統化方式整理環境，讓生活重新回到流暢與自在。
+        </p>
+
+        <p class="muted">
+          我的背景經驗與做事風格偏向溫和、好溝通，不會強迫客戶丟棄任何物品，而是以陪伴方式一起找到「最適合你的空間」。
+        </p>
+
+        <ul class="muted" style="margin:0; padding-left:1.2rem; line-height:1.7;">
+          <li>事前充分了解與溝通需求</li>
+          <li>整理過程陪你一起篩選與決定</li>
+          <li>依照你的生活方式規劃動線與收納邏輯</li>
+        </ul>
+
+        <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <a class="btn" href="#projects">查看作品集</a>
+          <a class="btn" href="#contact">聯絡我</a>
+        </div>
+      </div>
+
+      <!-- Right: Image -->
+      <div>
+        <img
+          class="about-avatar"
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+          alt="正在電腦前作業的工程師示意照"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- SECTION:ABOUT-END -->
+
+<!-- SECTION:SKILLS-START -->
+（保持不變）
+<!-- SECTION:SKILLS-END -->
+
+<!-- SECTION:PROJECTS-START -->
+（保持不變）
+<!-- SECTION:PROJECTS-END -->
+
+<!-- SECTION:CONTACT-START -->
+（保持不變）
+<!-- SECTION:CONTACT-END -->
+
+</main>
+
+<footer style="margin-top:auto;padding:1.25rem 0;">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <div class="muted">© <span aria-hidden="true">2025</span> Your Name · Frontend Dev</div>
+    <div class="muted">此為網站骨架（Phase 1），所有內容為占位文字。</div>
+  </div>
+</footer>
+
+</div>
 </body>
 </html>
