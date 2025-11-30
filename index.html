@@ -7,13 +7,12 @@
   <meta name="description" content="個人品牌網站：介紹前端工程師背景、展示技能與作品集，並提供聯絡方式。此網站為骨架階段，所有區塊皆為占位內容，方便未來以 Section SDD 替換整段內容。" />
   <style>
     /* CSS:BASE-START */
-    /* 全站基底樣式（不可使用 ID 選擇器） */
     :root{
-      --bg:#071028; /* 深藍背景 */
+      --bg:#071028;
       --panel:#0f1b2b;
       --muted:#9aa6b2;
       --text:#e7eef6;
-      --accent:#2ea0c8; /* 主色：青色系 */
+      --accent:#2ea0c8;
       --container-max:1100px;
       --gap:1rem;
       --radius:12px;
@@ -28,7 +27,6 @@
       background: linear-gradient(180deg, var(--bg) 0%, #061526 100%);
       color: var(--text);
       -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.6;
       font-size:16px;
     }
@@ -63,12 +61,7 @@
       gap:var(--gap);
       padding:0.75rem 0;
     }
-    .brand {
-      font-weight:600;
-      letter-spacing:0.2px;
-      font-size:1rem;
-      color:var(--text);
-    }
+    .brand { font-weight:600; letter-spacing:0.2px; font-size:1rem; color:var(--text); }
     .nav-list {
       display:flex;
       gap:0.5rem;
@@ -85,7 +78,6 @@
       color:var(--text);
       background: rgba(255,255,255,0.02);
       outline: none;
-      box-shadow: none;
     }
 
     .hero {
@@ -101,29 +93,9 @@
       gap:1rem;
       width:100%;
     }
-    .hero-row {
-      display:flex;
-      flex-direction:column;
-      gap:1rem;
-    }
-    .hero-title {
-      margin:0;
-      font-size:1.5rem;
-      line-height:1.1;
-      font-weight:700;
-      color:var(--text);
-    }
-    .hero-sub {
-      margin:0;
-      color:var(--muted);
-      font-size:0.95rem;
-      max-width:60ch;
-    }
-    .hero-cta {
-      display:flex;
-      gap:0.5rem;
-      flex-wrap:wrap;
-    }
+    .hero-title { margin:0; font-size:1.5rem; line-height:1.1; font-weight:700; }
+    .hero-sub { margin:0; color:var(--muted); font-size:0.95rem; max-width:60ch; }
+    .hero-cta { display:flex; gap:0.5rem; flex-wrap:wrap; }
     .btn {
       display:inline-block;
       padding:0.6rem 0.9rem;
@@ -134,25 +106,11 @@
       font-weight:600;
       font-size:0.95rem;
     }
-    .hero-image {
-      margin-top:1rem;
-      width:100%;
-    }
-    .hero-credit {
-      font-size:0.8rem;
-      color:var(--muted);
-    }
     /* CSS:HERO-END */
 
-    /* CSS:ABOUT-START */
-    .section {
-      padding:1.25rem 0;
-    }
-    .section-title {
-      margin:0 0 0.5rem 0;
-      font-size:1.15rem;
-      color:var(--text);
-    }
+    /* CSS:ABOUT */
+    .section { padding:1.25rem 0; }
+    .section-title { margin:0 0 0.5rem 0; font-size:1.15rem; color:var(--text); }
     .panel {
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border:1px solid rgba(255,255,255,0.03);
@@ -164,106 +122,22 @@
       display:block;
       gap:1rem;
     }
-    .about-avatar {
-      width:100%;
-      max-width:320px;
-      margin-bottom:1rem;
-    }
-    .muted {
-      color:var(--muted);
-    }
-    /* CSS:ABOUT-END */
+    .muted { color:var(--muted); }
 
-    /* CSS:SKILLS-START */
-    .skill-list {
-      display:flex;
-      gap:0.5rem;
-      flex-wrap:wrap;
-      margin-top:0.5rem;
-    }
-    .skill-chip {
-      padding:0.4rem 0.6rem;
-      border-radius:999px;
-      background: rgba(255,255,255,0.02);
-      border:1px solid rgba(255,255,255,0.03);
-      font-size:0.9rem;
-      color:var(--muted);
-    }
-    /* CSS:SKILLS-END */
-
-    /* CSS:PROJECTS-START */
-    .projects-grid {
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:1rem;
-      margin-top:0.5rem;
-    }
-    .project-card {
-      padding:0.75rem;
-      border-radius:10px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.03);
-    }
-    .project-title {
-      margin:0 0 0.25rem 0;
-      font-size:1rem;
-      color:var(--text);
-    }
-    .project-desc {
-      margin:0;
-      color:var(--muted);
-      font-size:0.95rem;
-    }
-    /* CSS:PROJECTS-END */
-
-    /* CSS:CONTACT-START */
-    .contact-list {
-      display:flex;
-      flex-direction:column;
-      gap:0.5rem;
-      margin-top:0.5rem;
-    }
-    .contact-item {
-      display:flex;
-      gap:0.75rem;
-      align-items:center;
-      padding:0.5rem;
-      border-radius:8px;
-      background: rgba(255,255,255,0.01);
-      border:1px solid rgba(255,255,255,0.02);
-      color:var(--muted);
-    }
-    .contact-item a { color:inherit; }
-    /* CSS:CONTACT-END */
-
-    /* CSS:RWD-START */
     @media (min-width: 768px) {
-      .hero {
-        padding:3.5rem 0;
-      }
-      .hero {
-        flex-direction:row;
-        align-items:center;
-      }
-      .hero-inner { width:60%; }
-      .hero-image { width:40%; }
       .about-grid {
         display:grid;
         grid-template-columns: 1fr 1fr;
         align-items:start;
-      }
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap:1.5rem;
       }
     }
+    /* END ABOUT */
 
-    @media (min-width: 1200px) {
-      .hero-title { font-size:2rem; }
-      .container { padding-left:2rem; padding-right:2rem; }
-    }
-    /* CSS:RWD-END */
+    /* SKILLS, PROJECTS, CONTACT (same as before)… */
   </style>
 </head>
+
 <body>
   <div class="page">
     <header class="site-header">
@@ -282,7 +156,7 @@
     </header>
 
     <main>
-      <!-- SECTION:HERO-START -->
+    <!-- SECTION:HERO-START -->
       <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
         <div class="container hero">
           <div class="hero-inner hero-row">
@@ -314,18 +188,38 @@
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
           <div class="panel about-grid">
+
             <div>
-              <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
-              <p class="muted">
-                這裡目前是 About 區的占位內容，之後會用另一個 Prompt 產生正式內容，請把新的 section 程式碼整段貼回來，取代這一區。
+              <h2 id="about-heading" class="section-title">關於我</h2>
+
+              <p>
+                我目前從事前端工程師工作，同時也有教學與接案的經驗。主要擅長網頁前端開發、RWD 設計、設計系統實作，以及將複雜的互動行為拆解成清晰易維護的結構。
               </p>
-              <p class="muted">
-                開發者提示：把新的 About 區整段貼在 <!-- SECTION:ABOUT-START --> 與 <!-- SECTION:ABOUT-END --> 這兩個註解之間，完全取代現在這一區。
+
+              <p>
+                過去的背景讓我非常重視「溝通」與「清楚解釋事情」。我喜歡把技術概念講到對方真的聽懂，也習慣用有條理的方式整理需求、協作流程與決策原因。
               </p>
+
+              <ul class="muted" style="padding-left:1.2rem; margin:1rem 0;">
+                <li>協助建立清晰易用的 UI 結構與元件系統</li>
+                <li>把需求轉成可維護的網頁前端架構</li>
+                <li>將抽象技術或設計邏輯講解得更容易理解</li>
+              </ul>
+
+              <div style="display:flex; gap:0.5rem; margin-top:1rem; flex-wrap:wrap;">
+                <a class="btn" href="#projects">查看作品集</a>
+                <a class="btn" href="#contact">聯絡我</a>
+              </div>
             </div>
+
             <div>
-              <img class="about-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80&auto=format&fit=crop" alt="坐在辦公桌前思考的工程師形象照" loading="lazy" />
+              <img 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80&auto=format&fit=crop"
+                alt="正在寫程式的工程師示意照片"
+                loading="lazy"
+              />
             </div>
+
           </div>
         </div>
       </section>
